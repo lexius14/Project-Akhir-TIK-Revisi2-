@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Where We Met</title>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: #000;
+        color: #fff;
+        font-family: "Playfair Display", serif;
+        padding: 20px;
+    }
+
+   
+    h1 {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 5px;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #ccc;
+        margin-bottom: 25px;
+    }
+
+    
+    .gallery {
+        column-count: 3;
+        column-gap: 15px;
+        max-width: 1100px;
+        margin: 0 auto 50px auto;
+    }
+
+    .gallery img {
+        width: 100%;
+        border-radius: 14px;
+        margin-bottom: 15px;
+        display: block;
+        break-inside: avoid;
+        transition: 0.28s ease;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(0,0,0,0.5);
+    }
+
+    
+    .gallery img:hover {
+        transform: translateY(-6px) scale(1.03);
+        box-shadow: 0 0 18px rgba(255,255,255,0.22), 
+                    0 6px 25px rgba(0,0,0,0.7);
+    }
+
+    
+    #popup {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: rgba(0,0,0,0.9);
+        display: none;
+        justify-content: center;
+        align-items: center;
+        z-index: 999;
+    }
+
+    #popup img {
+        max-width: 90%;
+        max-height: 90%;
+        border-radius: 14px;
+    }
+
+    
+    .back-link {
+        display: block;
+        margin: 40px auto;
+        width: fit-content;
+        padding: 10px 22px;
+        border: 1px solid #fff;
+        border-radius: 10px;
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.1rem;
+        transition: 0.25s;
+    }
+
+    .back-link:hover {
+        background: #fff;
+        color: #000;
+    }
+
+    @media(max-width: 900px) {
+        .gallery { column-count: 2; }
+    }
+    @media(max-width: 600px) {
+        .gallery { column-count: 1; }
+    }
+</style>
+</head>
+
+<body>
+
+<h1>valentis</h1>
+<p class="subtitle">Where It All Started</p>
+
+<div class="gallery">
+    <img src="photo1.jpg">
+    <img src="photo2.jpg">
+    <img src="photo3.jpg">
+    <img src="photo4.jpg">
+    <img src="photo5.jpg">
+    <img src="photo6.jpg">
+    <img src="photo7.jpg">
+    <img src="photo8.jpg">
+    <img src="photo9.jpg">
+    <img src="photo10.jpg">
+</div>
+
+
+<div id="popup" onclick="closePopup()">
+    <img id="popupImg" src="">
+</div>
+
+<a href="../../Main page/index.html" class="back-link">Back to Home</a>
+
+<script>
+    const popup = document.getElementById("popup");
+    const popupImg = document.getElementById("popupImg");
+
+    document.querySelectorAll(".gallery img").forEach(img => {
+        img.onclick = () => {
+            popup.style.display = "flex";
+            popupImg.src = img.src;
+        };
+    });
+
+    function closePopup() {
+        popup.style.display = "none";
+    }
+</script>
+
+</body>
+</html>

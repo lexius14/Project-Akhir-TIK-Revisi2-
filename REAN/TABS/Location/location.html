@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Locations - Rean and Kayla</title>
+
+    <style>
+        /* Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000;       /* Black background */
+            color: #fff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 5px;
+            font-size: 2rem;
+        }
+
+        p.subtitle {
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 1rem;
+            color: #ccc;
+        }
+
+        /* Masonry Gallery */
+        .gallery {
+            column-count: 3;
+            column-gap: 15px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .gallery img {
+            width: 100%;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: block;
+            break-inside: avoid;
+        }
+
+        /* Back button */
+        .back-link {
+            display: block;
+            margin: 30px auto;
+            width: fit-content;
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.1rem;
+            padding: 8px 16px;
+            border: 1px solid #fff;
+            border-radius: 8px;
+            transition: 0.3s;
+        }
+
+        .back-link:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        /* Responsive */
+        @media (max-width: 900px) {
+            .gallery {
+                column-count: 2;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .gallery {
+                column-count: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Locations</h1>
+    <p class="subtitle">Memories from the place it all began.</p>
+
+    <div class="gallery">
+        <!-- Place your images here -->
+        <img src="photo1.jpg" alt="Memory 1">
+        <img src="photo2.jpg" alt="Memory 2">
+        <img src="photo3.jpg" alt="Memory 3">
+        <img src="photo4.jpg" alt="">
+        <img src="photo5.jpg" alt="">
+        <img src="photo6.jpg" alt="">
+        <img src="photo7.jpg" alt="">
+        <img src="photo8.jpg" alt="">
+        <img src="photo9.jpg" alt="">
+    </div>
+
+  <a href="../../Main page/index.html" class="back-link">Back to Home</a>
+
+</body>
+</html>

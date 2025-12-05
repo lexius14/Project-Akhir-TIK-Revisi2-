@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rean and Kayla's Memory Gallery</title>
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Playfair+Display:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif; 
+            color: #fff; 
+            min-height: 100vh;
+            position: relative;
+        }
+
+       
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('1.jfif');
+            background-size: cover;
+            background-position: center;
+            filter: blur(1px); 
+            z-index: 0;
+        }
+
+       
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); 
+        }
+
+      
+        .container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            width: 100%;
+            min-height: 100vh;
+        }
+
+      
+        .sidebar {
+            flex: 0 0 250px;
+             background-color: #000; 
+              color: #fff; 
+             padding: 20px;
+             padding-top: 40px; 
+             display: flex;
+             flex-direction: column;
+             justify-content: center; 
+             align-items: center; 
+        }
+
+        .sidebar h1 {
+            font-size: 1.5em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .tab-list {
+            list-style: none;
+            width: 100%;
+        }
+
+        .tab-item {
+            margin-bottom: 10px;
+        }
+
+        .tab-link {
+            font-family: 'Playfair Display', serif;
+            display: block;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 1em;
+            cursor: pointer;
+            text-align: center; 
+            width: 100%;
+            padding: 10px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .tab-link:hover {
+            background-color: #333; 
+        }
+
+        
+        .main-content {
+             flex: 1;
+              padding: 20px;
+              display: flex;
+              flex-direction: column;
+               justify-content: flex-start; 
+               align-items: center;
+               text-align: center;
+               margin-top: 80px; 
+        }
+
+        .middle-text {
+            font-family: 'Great Vibes',cursive;
+            font-size: 3.5em;
+            margin-bottom: 20px;
+        }
+
+        .bottom-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 0.8em;
+            margin-top: 20px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            .sidebar {
+                font-family: 'Playfair Display', serif;
+                letter-spacing: 1px;   
+                flex: none;
+                width: 100%;
+                order: 2; 
+            }
+            .main-content {
+                order: 1;
+            }
+        }
+        
+        .menu-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            background: none;
+            border: none;
+            color: white;
+            cursor: pointer;
+            z-index: 50;
+        }
+
+        .sidebar {
+            transform: translateX(-250px);
+            transition: 0.4s ease;
+        }
+
+        .sidebar.active {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <button class="menu-btn" onclick="toggleMenu()">☰</button>
+    <div class="background"></div>
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="sidebar">
+            <h1>Rean And Kayla</h1>
+            <ul class="tab-list">
+                <li class="tab-item"><a href="../Tabs/Where/where.html" class="tab-link">Where It Happened</a></li>
+                <li class="tab-item"><a href="../Tabs/chat/chat.html" class="tab-link">First Chat</a></li>
+                <li class="tab-item"><a href="../Tabs/date/date.html" class="tab-link">First Date</a></li>
+                <li class="tab-item"><a href="../Tabs/location/location.html" class="tab-link">Location</a></li>
+                <li class="tab-item"><a href="../Tabs/moments/moments.html" class="tab-link">Moments</a></li>
+                <li class="tab-item"><a href="../Tabs/valentines/valentines.html" class="tab-link">Valentines</a></li>
+                <li class="tab-item"><a href="../Tabs/thankyou/thankyou.html" class="tab-link">Thank You for Being with Me</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <p class="middle-text">For our special moments Rean and Kayla</p>
+            <p class="bottom-text">A small place that keeps every first moment we shared together.</p>
+        </div>
+    </div>
+    <script>
+function toggleMenu() {
+    document.querySelector('.sidebar').classList.toggle('active');
+}
+</script>
+</body>
+</html>
